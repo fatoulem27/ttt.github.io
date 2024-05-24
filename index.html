@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TOUR</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TOUR</h1>
+        <div class="search-box">
+            <h2>항공권 검색</h2>
+            <form id="searchForm">
+                <label for="origin">출발지:</label>
+                <input type="text" id="origin" name="origin" required>
+                <label for="destination">도착지:</label>
+                <input type="text" id="destination" name="destination" required>
+                <button type="submit">검색</button>
+            </form>
+        </div>
+        <div class="package-list">
+            <h2>패키지 여행</h2>
+            <div class="package" onclick="window.location.href='package1.html'">
+                <h3>[강릉항/모텔급] 울릉도 4도탐방 2박3일</h3>
+                <p>가격: 439,900 원</p>
+            </div>
+            <div class="package" onclick="window.location.href='package2.html'">
+                <h3>[김포출발] 제주도 럭셔리 요트투어 3박4일</h3>
+                <p>가격: 499,900 원</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const origin = document.getElementById('origin').value;
+            const destination = document.getElementById('destination').value;
+            alert(`항공권 검색: ${origin} -> ${destination}`);
+        });
+    </script>
+</body>
+</html>
